@@ -102,33 +102,6 @@ Preview production build locally:
 npm run preview
 ```
 
-## Environment Variables
-
-Configure runtime behavior in .env.
-
-| Variable | Description | Default |
-| --- | --- | --- |
-| VITE_TASKS_VISION_WASM_URL | MediaPipe Tasks Vision WASM base URL | jsdelivr URL |
-| VITE_FACE_LANDMARKER_MODEL_URL | Face landmarker model URL | Google storage URL |
-| VITE_STREAM_TARGET_ORIGIN | postMessage target origin for streaming | * |
-| VITE_STREAM_AUTH_USER | Optional stream credential username | empty |
-| VITE_STREAM_AUTH_PASSWORD | Optional stream credential password | empty |
-| VITE_STREAM_AUTH_TOKEN | Optional stream credential token | empty |
-| VITE_GAZE_ENABLE_CURSOR | Enable gaze dot | true |
-| VITE_GAZE_SMOOTHING_ALPHA | EMA smoothing factor | 0.12 |
-| VITE_GAZE_SENSITIVITY_GAIN | Cursor sensitivity multiplier | 2.0 |
-| VITE_GAZE_MICRO_OFFSET_GAIN | Relative iris micro-motion amplification | 2.2 |
-| VITE_GAZE_DOT_SIZE | Dot radius | 12 |
-| VITE_GAZE_DOT_CORE_SIZE | Dot core radius | 4 |
-| VITE_GAZE_DOT_OPACITY | Dot opacity | 0.85 |
-| VITE_GAZE_TRAIL_ENABLED | Enable trail rendering | false |
-| VITE_GAZE_TRAIL_LENGTH | Trail length | 24 |
-| VITE_GAZE_TRAIL_OPACITY | Trail opacity | 0.35 |
-| VITE_GAZE_FIXATION_ENABLED | Enable fixation ring | true |
-| VITE_GAZE_FIXATION_VELOCITY_THRESHOLD | Velocity threshold for fixation state | 0.003 |
-| VITE_GAZE_FIXATION_MIN_DURATION_MS | Minimum fixation duration | 120 |
-| VITE_GAZE_STREAMING_ENABLED | Enable streaming payload posting | false |
-
 ## Usage Flow
 
 1. Start camera.
@@ -137,18 +110,3 @@ Configure runtime behavior in .env.
 4. Continue to overlay page after calibration completes.
 5. Tune live settings for your session.
 
-## Security Notes
-
-- Do not commit .env.
-- Any variable prefixed with VITE_ is exposed to browser runtime.
-- Keep long-term secrets on a backend service, not in frontend env variables.
-
-## Troubleshooting
-
-- If webcam permission is denied, allow camera access and reload.
-- If gaze drifts, run calibration again with better lighting and a steady head position.
-- If model loading fails, confirm network access to configured WASM/model URLs.
-
-## License
-
-No license file is currently included. Add a LICENSE file if you plan to distribute this project.
